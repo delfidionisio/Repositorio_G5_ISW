@@ -1,0 +1,285 @@
+Delivered-To: somavillarami@gmail.com
+Received: by 2002:a05:6918:a691:b0:1a3:c909:9c6a with SMTP id db17csp2158636ysb;
+        Tue, 5 Sep 2023 16:24:02 -0700 (PDT)
+X-Received: by 2002:a25:4108:0:b0:d48:1936:14d0 with SMTP id o8-20020a254108000000b00d48193614d0mr14551621yba.53.1693956242471;
+        Tue, 05 Sep 2023 16:24:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1693956242; cv=none;
+        d=google.com; s=arc-20160816;
+        b=xioN6zmydSLc0s1Odukqlldh35IxmT6bflbTrDFoMoSY+5cx5NOik6PHj5rT6EWEIV
+         Hd6ijnLzKUO+FaBHwfDGSBLYawCXKncpdwEH35kkp+F8FxCxzzAa5sZwTcErB72nA6xq
+         wHLXFoGgS4SjiaZ+oxDcGT9IG86hGWhvY1cP/NXTzdlxzWUDopijijfXWYThQrm+w014
+         2GiFoA9+YAmDEkpN4N4FL4V8GSeHC66J9RL5Fftp0nj05hbTlPWSuHrvFG1ZgFhTHvMc
+         LuoKgPBgvGtsONqadNtlpwgbKPm8EHsK2uDh/Tg7gW9ksn5Ild6iuJv0qD4ahL8Xx20m
+         yzMA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=yETYVILTJMp+86jooAd/bnQ5mZD8UNVtbBFIvVozOEQ=;
+        fh=vBMuREFrUl4Z6YnpJWO3B8O/iRqtNLDYSIZXcBl/GT0=;
+        b=QpelknxukTytQl3CRuWUwhLq1gr3SeONOfJh1gZJ+ivZhM5Dyjs9P74DhRX+tgUe/s
+         LFxnxPvjTABMqe8IxzBE8oM5WZXYToQL7XMk6qS/4YgwgJPgo/jTQ83Ejr4VSiei74Gy
+         mMa9EA7F9NwjH1euf82cBp2YWt4NDc0LuLi3Her425fPVEk1I1zYI4XqigLDVhQgIeKH
+         1DDocDFhXqKnlRSCnLVZwIz/sIOll4PatwfHp2PJtduKMBReGvnJian1iludZwtp6BmX
+         8shQkilGuuwS7KyVvijQLoRt06gQpiTOt3j9rFJ8EHMBWhJzrDPU5vgTvrbYBVRR2ZsN
+         9Drw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20221208 header.b=FqsFetgy;
+       spf=pass (google.com: domain of celihunziker@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=celihunziker@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <celihunziker@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id o11-20020a25410b000000b00d720f92c84fsor3567479yba.8.2023.09.05.16.24.02
+        (Google Transport Security);
+        Tue, 05 Sep 2023 16:24:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of celihunziker@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20221208 header.b=FqsFetgy;
+       spf=pass (google.com: domain of celihunziker@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=celihunziker@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20221208; t=1693956242; x=1694561042; dara=google.com;
+        h=cc:to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=yETYVILTJMp+86jooAd/bnQ5mZD8UNVtbBFIvVozOEQ=;
+        b=FqsFetgylns1sOphT5rnCkgaBpwVueMc2SXhkc1UhwwfLm8zTnMgGipQ+EW8xsArGF
+         hJbwwBMv+rQVrCXmV0WASRO7y2O7MVze4sPmFkEY8yNQks42Xgkb7KiPNDuRZr1NRIaB
+         k7bjjPjBYTYHcRhBqoeWXyX8j3pBZDDq9Z6NMZaMiDnof1OV6QPTgPV3oO0BRXRGiw3v
+         3iBiTXTc+D7tIqhDK98WJXiWg/9lHU7aJFRgIdSY+gR0hmyKZ2w3vGuy9XrA2NFjq01W
+         WsRJgMtc2bOxh2rM5QSb+2nDk0EnAWl4i1Hiu5TyHm+93apcOLGyEddFSGqJsT7JTO93
+         NnEg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1693956242; x=1694561042;
+        h=cc:to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=yETYVILTJMp+86jooAd/bnQ5mZD8UNVtbBFIvVozOEQ=;
+        b=IynnobgEgh9/u+EvH+CHFR9s21dOC3N0D6TAEcK/EuodUfV2j3k4sKBwWBe8pMqabv
+         z1So3XVmG6TmW7M+EYPMa+Sbqag8cT8HPDQdruEUwqXGNGU7wQskk+M+bOfiGB3K4ViO
+         xO8JHrdk9JigR22XNnc9+CC/REFHV+GPYjMntG6ORnynjLFY7MNOL5iOeQm3Exm9UpCZ
+         xuJ8pcKXLSjl2SO9PQ7ByF57ds5nBc9IxTHCIfy6ztk/B1yEw4BWqQMIzZ6aiyl9tU1W
+         x2SVHrBnUmrnyEmm+Qt9IM1ia2LPcqoNj2VbWm1bJ2dhAGMhyb04/lp3fV8G13g06VN7
+         KZMw==
+X-Gm-Message-State: AOJu0YzyJOkNBCq1OcaH+v9DqhfNfzh4I78KWEV/qFeGCcY3nENwH++l
+	022e7Kc1ynSdk6s4z1ZSDCvYgiynC4AfcShQ1BYvxT7qJlrMf/Zu
+X-Google-Smtp-Source: AGHT+IGgIc2AAqevyWn4l/0q+U0fb7uMT22gnzh1s+kWc+Fl4UCXW88+qILDnKT3nzaypYqWukf0iZFEO+nDq7/bRsg=
+X-Received: by 2002:a25:a1e9:0:b0:d0a:a1fa:b8e4 with SMTP id
+ a96-20020a25a1e9000000b00d0aa1fab8e4mr15880915ybi.38.1693956241618; Tue, 05
+ Sep 2023 16:24:01 -0700 (PDT)
+MIME-Version: 1.0
+From: Celina Hunziker <celihunziker@gmail.com>
+Date: Tue, 5 Sep 2023 20:23:49 -0300
+Message-ID: <CABNE7-t0_Qrr5tu4ZesdxoaDKpL4b71-krK=TtEp9RCyf1su8w@mail.gmail.com>
+Subject: =?UTF-8?Q?Consulta=2FConversaci=C3=B3n_TP_6_ISW_4K1_G5?=
+To: Micka Crespo <mickaelacrespo@gmail.com>, Judith Meles <jmeles@gmail.com>, gboiero@gmail.com
+Cc: sofi.almendra02@gmail.com, delfidionisio19@gmail.com, franm2910@gmail.com, 
+	somavillarami@gmail.com, paularrascaeta@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000000bfb070604a4ec74"
+
+--0000000000000bfb070604a4ec74
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Buenas Noches,
+Les escribo por consultas del TP 6 de Ingenier=C3=ADa y Calidad de Software=
+ que
+surgieron en mi grupo.
+
+   1.
+
+   Sobre campo de texto donde se especifica lo que se debe buscar:
+   1.
+
+      =C2=BFTiene un l=C3=ADmite de caracteres?
+      2.
+
+      =C2=BFEs de tipo alfanum=C3=A9rico?
+      3.
+
+      =C2=BFSe puede pedir m=C3=A1s de un producto?
+      1.
+
+         =C2=BFSi se puede pedir m=C3=A1s de un producto, los mismos pueden=
+ ser de
+         distintos negocios?
+         2.
+
+   Sobre la foto que puede ser adjuntada:
+   1.
+
+      =C2=BFSe puede subir m=C3=A1s de una foto?
+      3.
+
+   Sobre la direcci=C3=B3n del negocio:
+   1.
+
+      =C2=BFEscribimos la direcci=C3=B3n completa en un mismo campo de text=
+o? O
+      dividimos en calle, n=C3=BAmero, ciudad=E2=80=A6
+      2.
+
+      Con respecto a la ciudad, el cuarto criterio de aceptaci=C3=B3n dice =
+que
+      la misma se puede escribir en un campo de texto, mientras que el quin=
+to
+      especifica que se debe visualizar en un dropbox. =C2=BFCu=C3=A1l de l=
+os
+dos criterios
+      deber=C3=ADamos seguir?
+      3.
+
+      =C2=BFSe puede elegir la direcci=C3=B3n seleccionando en un mapa inte=
+ractivo?
+      4.
+
+   Si ya ingresamos la direcci=C3=B3n y tarjeta
+   1.
+
+      =C2=BFEs posible volver atr=C3=A1s?
+      2.
+
+      =C2=BFSe puede modificar el pedido?
+
+Desde ya, muchas gracias. Espero su respuesta.
+
+Atentamente,
+Celina Hunziker
+
+--0000000000000bfb070604a4ec74
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><span id=3D"gmail-docs-internal-guid-918407e6-7fff-71c0-cf=
+4d-66e364ed2787"><div style=3D"text-align:justify"><font color=3D"#000000" =
+face=3D"Arial, sans-serif"><span style=3D"font-size:14.6667px">Buenas Noche=
+s,</span></font></div><div style=3D"text-align:justify"><font color=3D"#000=
+000" face=3D"Arial, sans-serif"><span style=3D"font-size:14.6667px">Les esc=
+ribo por consultas del TP 6 de Ingenier=C3=ADa y Calidad de Software que su=
+rgieron en mi grupo.</span></font></div><ol style=3D"margin-top:0px;margin-=
+bottom:0px"><li style=3D"list-style-type:decimal;font-size:11pt;font-family=
+:Arial,sans-serif;color:rgb(0,0,0);background-color:transparent;font-varian=
+t-numeric:normal;font-variant-east-asian:normal;font-variant-alternates:nor=
+mal;vertical-align:baseline;white-space:pre"><p style=3D"line-height:1.38;t=
+ext-align:justify;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><=
+span style=3D"font-size:11pt;background-color:transparent;font-variant-nume=
+ric:normal;font-variant-east-asian:normal;font-variant-alternates:normal;ve=
+rtical-align:baseline">Sobre campo de texto donde se especifica lo que se d=
+ebe buscar:</span></p></li><ol style=3D"margin-top:0px;margin-bottom:0px"><=
+li style=3D"list-style-type:lower-alpha;font-size:11pt;font-family:Arial,sa=
+ns-serif;color:rgb(0,0,0);background-color:transparent;font-variant-numeric=
+:normal;font-variant-east-asian:normal;font-variant-alternates:normal;verti=
+cal-align:baseline;white-space:pre"><p style=3D"line-height:1.38;text-align=
+:justify;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><span styl=
+e=3D"font-size:11pt;background-color:transparent;font-variant-numeric:norma=
+l;font-variant-east-asian:normal;font-variant-alternates:normal;vertical-al=
+ign:baseline">=C2=BFTiene un l=C3=ADmite de caracteres?=C2=A0</span></p></l=
+i><li style=3D"list-style-type:lower-alpha;font-size:11pt;font-family:Arial=
+,sans-serif;color:rgb(0,0,0);background-color:transparent;font-variant-nume=
+ric:normal;font-variant-east-asian:normal;font-variant-alternates:normal;ve=
+rtical-align:baseline;white-space:pre"><p style=3D"line-height:1.38;text-al=
+ign:justify;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><span s=
+tyle=3D"font-size:11pt;background-color:transparent;font-variant-numeric:no=
+rmal;font-variant-east-asian:normal;font-variant-alternates:normal;vertical=
+-align:baseline">=C2=BFEs de tipo alfanum=C3=A9rico?=C2=A0</span></p></li><=
+li style=3D"list-style-type:lower-alpha;font-size:11pt;font-family:Arial,sa=
+ns-serif;color:rgb(0,0,0);background-color:transparent;font-variant-numeric=
+:normal;font-variant-east-asian:normal;font-variant-alternates:normal;verti=
+cal-align:baseline;white-space:pre"><p style=3D"line-height:1.38;text-align=
+:justify;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><span styl=
+e=3D"font-size:11pt;background-color:transparent;font-variant-numeric:norma=
+l;font-variant-east-asian:normal;font-variant-alternates:normal;vertical-al=
+ign:baseline">=C2=BFSe puede pedir m=C3=A1s de un producto?</span></p></li>=
+<ol style=3D"margin-top:0px;margin-bottom:0px"><li style=3D"list-style-type=
+:lower-roman;font-size:11pt;font-family:Arial,sans-serif;color:rgb(0,0,0);b=
+ackground-color:transparent;font-variant-numeric:normal;font-variant-east-a=
+sian:normal;font-variant-alternates:normal;vertical-align:baseline;white-sp=
+ace:pre"><p style=3D"line-height:1.38;text-align:justify;margin-top:0pt;mar=
+gin-bottom:0pt" role=3D"presentation"><span style=3D"font-size:11pt;backgro=
+und-color:transparent;font-variant-numeric:normal;font-variant-east-asian:n=
+ormal;font-variant-alternates:normal;vertical-align:baseline">=C2=BFSi se p=
+uede pedir m=C3=A1s de un producto, los mismos pueden ser de distintos nego=
+cios?</span></p></li></ol></ol><li style=3D"list-style-type:decimal;font-si=
+ze:11pt;font-family:Arial,sans-serif;color:rgb(0,0,0);background-color:tran=
+sparent;font-variant-numeric:normal;font-variant-east-asian:normal;font-var=
+iant-alternates:normal;vertical-align:baseline;white-space:pre"><p style=3D=
+"line-height:1.38;text-align:justify;margin-top:0pt;margin-bottom:0pt" role=
+=3D"presentation"><span style=3D"font-size:11pt;background-color:transparen=
+t;font-variant-numeric:normal;font-variant-east-asian:normal;font-variant-a=
+lternates:normal;vertical-align:baseline">Sobre la foto que puede ser adjun=
+tada:</span></p></li><ol style=3D"margin-top:0px;margin-bottom:0px"><li sty=
+le=3D"list-style-type:lower-alpha;font-size:11pt;font-family:Arial,sans-ser=
+if;color:rgb(0,0,0);background-color:transparent;font-variant-numeric:norma=
+l;font-variant-east-asian:normal;font-variant-alternates:normal;vertical-al=
+ign:baseline;white-space:pre"><p style=3D"line-height:1.38;text-align:justi=
+fy;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><span style=3D"f=
+ont-size:11pt;background-color:transparent;font-variant-numeric:normal;font=
+-variant-east-asian:normal;font-variant-alternates:normal;vertical-align:ba=
+seline">=C2=BFSe puede subir m=C3=A1s de una foto?</span></p></li></ol><li =
+style=3D"list-style-type:decimal;font-size:11pt;font-family:Arial,sans-seri=
+f;color:rgb(0,0,0);background-color:transparent;font-variant-numeric:normal=
+;font-variant-east-asian:normal;font-variant-alternates:normal;vertical-ali=
+gn:baseline;white-space:pre"><p style=3D"line-height:1.38;text-align:justif=
+y;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><span style=3D"fo=
+nt-size:11pt;background-color:transparent;font-variant-numeric:normal;font-=
+variant-east-asian:normal;font-variant-alternates:normal;vertical-align:bas=
+eline">Sobre la direcci=C3=B3n del negocio:</span></p></li><ol style=3D"mar=
+gin-top:0px;margin-bottom:0px"><li style=3D"list-style-type:lower-alpha;fon=
+t-size:11pt;font-family:Arial,sans-serif;color:rgb(0,0,0);background-color:=
+transparent;font-variant-numeric:normal;font-variant-east-asian:normal;font=
+-variant-alternates:normal;vertical-align:baseline;white-space:pre"><p styl=
+e=3D"line-height:1.38;text-align:justify;margin-top:0pt;margin-bottom:0pt" =
+role=3D"presentation"><span style=3D"font-size:11pt;background-color:transp=
+arent;font-variant-numeric:normal;font-variant-east-asian:normal;font-varia=
+nt-alternates:normal;vertical-align:baseline">=C2=BFEscribimos la direcci=
+=C3=B3n completa en un mismo campo de texto? O dividimos en calle, n=C3=BAm=
+ero, ciudad=E2=80=A6</span></p></li><li style=3D"list-style-type:lower-alph=
+a;font-size:11pt;font-family:Arial,sans-serif;color:rgb(0,0,0);background-c=
+olor:transparent;font-variant-numeric:normal;font-variant-east-asian:normal=
+;font-variant-alternates:normal;vertical-align:baseline;white-space:pre"><p=
+ style=3D"line-height:1.38;text-align:justify;margin-top:0pt;margin-bottom:=
+0pt" role=3D"presentation"><span style=3D"font-size:11pt;background-color:t=
+ransparent;font-variant-numeric:normal;font-variant-east-asian:normal;font-=
+variant-alternates:normal;vertical-align:baseline">Con respecto a la ciudad=
+, el cuarto criterio de aceptaci=C3=B3n dice que la misma se puede escribir=
+ en un campo de texto, mientras que el quinto especifica que se debe visual=
+izar en un dropbox. =C2=BFCu=C3=A1l de los dos criterios deber=C3=ADamos se=
+guir?</span></p></li><li style=3D"list-style-type:lower-alpha;font-size:11p=
+t;font-family:Arial,sans-serif;color:rgb(0,0,0);background-color:transparen=
+t;font-variant-numeric:normal;font-variant-east-asian:normal;font-variant-a=
+lternates:normal;vertical-align:baseline;white-space:pre"><p style=3D"line-=
+height:1.38;text-align:justify;margin-top:0pt;margin-bottom:0pt" role=3D"pr=
+esentation"><span style=3D"font-size:11pt;background-color:transparent;font=
+-variant-numeric:normal;font-variant-east-asian:normal;font-variant-alterna=
+tes:normal;vertical-align:baseline">=C2=BFSe puede elegir la direcci=C3=B3n=
+ seleccionando en un mapa interactivo?</span></p></li></ol><li style=3D"lis=
+t-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;color:rgb(=
+0,0,0);background-color:transparent;font-variant-numeric:normal;font-varian=
+t-east-asian:normal;font-variant-alternates:normal;vertical-align:baseline;=
+white-space:pre"><p style=3D"line-height:1.38;text-align:justify;margin-top=
+:0pt;margin-bottom:0pt" role=3D"presentation"><span style=3D"font-size:11pt=
+;background-color:transparent;font-variant-numeric:normal;font-variant-east=
+-asian:normal;font-variant-alternates:normal;vertical-align:baseline">Si ya=
+ ingresamos la direcci=C3=B3n y tarjeta</span></p></li><ol style=3D"margin-=
+top:0px;margin-bottom:0px"><li style=3D"list-style-type:lower-alpha;font-si=
+ze:11pt;font-family:Arial,sans-serif;color:rgb(0,0,0);background-color:tran=
+sparent;font-variant-numeric:normal;font-variant-east-asian:normal;font-var=
+iant-alternates:normal;vertical-align:baseline;white-space:pre"><p style=3D=
+"line-height:1.38;text-align:justify;margin-top:0pt;margin-bottom:0pt" role=
+=3D"presentation"><span style=3D"font-size:11pt;background-color:transparen=
+t;font-variant-numeric:normal;font-variant-east-asian:normal;font-variant-a=
+lternates:normal;vertical-align:baseline">=C2=BFEs posible volver atr=C3=A1=
+s?=C2=A0</span></p></li><li style=3D"list-style-type:lower-alpha;font-size:=
+11pt;font-family:Arial,sans-serif;color:rgb(0,0,0);background-color:transpa=
+rent;font-variant-numeric:normal;font-variant-east-asian:normal;font-varian=
+t-alternates:normal;vertical-align:baseline;white-space:pre"><p style=3D"li=
+ne-height:1.38;text-align:justify;margin-top:0pt;margin-bottom:0pt" role=3D=
+"presentation"><span style=3D"font-size:11pt;background-color:transparent;f=
+ont-variant-numeric:normal;font-variant-east-asian:normal;font-variant-alte=
+rnates:normal;vertical-align:baseline">=C2=BFSe puede modificar el pedido?<=
+/span></p></li></ol></ol><font color=3D"#000000" face=3D"Arial, sans-serif"=
+><span style=3D"font-size:14.6667px">Desde ya, muchas gracias. Espero su re=
+spuesta.</span></font></span><div><span><font color=3D"#000000" face=3D"Ari=
+al, sans-serif"><span style=3D"font-size:14.6667px"><br></span></font></spa=
+n></div><div><span><font color=3D"#000000" face=3D"Arial, sans-serif"><span=
+ style=3D"font-size:14.6667px">Atentamente,</span></font></span></div><div>=
+<span><font color=3D"#000000" face=3D"Arial, sans-serif"><span style=3D"fon=
+t-size:14.6667px">Celina Hunziker</span></font></span></div></div>
+
+--0000000000000bfb070604a4ec74--

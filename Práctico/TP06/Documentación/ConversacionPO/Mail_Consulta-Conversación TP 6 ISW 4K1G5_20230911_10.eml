@@ -1,0 +1,787 @@
+Delivered-To: somavillarami@gmail.com
+Received: by 2002:a05:6918:a68c:b0:1a3:c909:9c6a with SMTP id db12csp2521490ysb;
+        Mon, 11 Sep 2023 17:40:14 -0700 (PDT)
+X-Received: by 2002:a67:ffd6:0:b0:44e:a94f:1019 with SMTP id w22-20020a67ffd6000000b0044ea94f1019mr10038769vsq.31.1694479214346;
+        Mon, 11 Sep 2023 17:40:14 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1694479214; cv=none;
+        d=google.com; s=arc-20160816;
+        b=KZhWAFxeLrdZnQgztHMZm63EvusIS7ocJp24KRBkBb1WmjHMlY0oAXrLfQh0BI/VOD
+         MPHllPeK7iy3eN1gRWdoN+Q9nhzk4OT1XEPuJkF0DO6Z5ivAjbZMqx9q3JAiKmDE1vx0
+         gHQSUDZNVVR7uGXttpLg+2z2R/3fwT8dj7+iMaqaLob4mFh/7tVU/SeLl+8kuF8ROTuj
+         EKsoFvhQ8HjervpfXFi7qpOkuMhTaZMb8tzyh7GIv39v61HPm6dHK1n+t4TJ0qPhR+gx
+         A/yNaD7rRYilwGJlCA2myFaGxq2kjCjfHzom+KjvyNb1TQcRPuI4+c/EylVRhjz0Exjv
+         1bcQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=j84nT/+EmNn5fH53jXW7+c3NwYKdExaamXHsjAYQ5PQ=;
+        fh=ISihFOtXzxjKKuZaMDJRMIf9oZtku63N0qGE71CrPU0=;
+        b=YEJPyQ8J5dKgKXwQhyXhToyBIIzuEb7Il/uE1JLxm5R9YPgJYEBZFPRYfoOWhzlKh9
+         tmxSa3MX5zioTdJ2lRz3q9t588Mm9ljVN2jdit2cMuw0TPaL9+tVuDI+f40qe3kEd4uI
+         tmSLG+C1tkj//yRhS2i8oThj+efl+o9G9gaFyUYD5TtXyb3kZcsDPVcIaSY6wl4NVaRQ
+         elS20CJotaf1NvepP3D9ZzgRd+sTNquFTODR0rsEpK9maEu+lSAyUEFUZT18vMWHT9wX
+         5k9wZoAUIVX13FEnpRk3UlK/xWNLXeu4lOPoPztKKtiHS0MEUTCn+tK+1+t4Ttqhjpv5
+         xRDw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20221208 header.b=Yllbn5mG;
+       spf=pass (google.com: domain of celihunziker@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=celihunziker@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <celihunziker@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d192-20020a25e6c9000000b00d74a8ae5203sor2310868ybh.8.2023.09.11.17.40.13
+        (Google Transport Security);
+        Mon, 11 Sep 2023 17:40:14 -0700 (PDT)
+Received-SPF: pass (google.com: domain of celihunziker@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20221208 header.b=Yllbn5mG;
+       spf=pass (google.com: domain of celihunziker@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=celihunziker@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20221208; t=1694479213; x=1695084013; dara=google.com;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=j84nT/+EmNn5fH53jXW7+c3NwYKdExaamXHsjAYQ5PQ=;
+        b=Yllbn5mGK5FuzRm/stzjI8lXw7h2BBy+C0B7KI+OgVu/Pib2nxCP49XDQbM7i1lo4a
+         xYuSIb8Imsl1bl1/nnlO3qS4/FDmQ7ECflv2jfpnwm/24ZQ2/KRpv8tlW8ryTHr5g26U
+         hNMcOAKU6wb/HGawJHKNOvN6BlwpVMN6H74ClBiV5Y+6BONfgvdgWjbvbQ5JEt4uTvYX
+         bYkI606z1JeEt43OEOjD5kgSgYh6deBe6eqdsu2qk5S2pED8j/EOngT9ipn13fcvCsy+
+         SwajfMXUFzlejoKpZgNdcLVS1nl6Z4gytToVxUwLs+GT1+TNAvkyDKkpSyPi3h83zWH6
+         pttQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1694479213; x=1695084013;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=j84nT/+EmNn5fH53jXW7+c3NwYKdExaamXHsjAYQ5PQ=;
+        b=WbOuqMnsSSO+lIFo+kZmbYHPtnHLq6aaDMdRUZtjxirU4FvrNg8hFXqd7hYGqQQ2nv
+         mj3ZCF+rBYC5q5Nr2B2S93sEEHQJ8uOawFzbIEMVFF8uPKs8lf+B0bkcetctDLd7WtiG
+         CkX8JvPnbjzkp0MIWsNCYiOxIrky7ykIqNzBAPA4VswbcfslVLxyB/kGeGTZO7AAh336
+         /lS22uPRC6bftbCswapVIZN+oWaMrW+JdicRxT/FrDMUipJRDQbSq51YOhNxXhKleGhl
+         AO+8Fgp2KyXEo1vffz2bNPcTl1c9Sz5FMZl2/BVhIvdcUQZjXW06XxWmPh9P9MdwaiDV
+         dDBg==
+X-Gm-Message-State: AOJu0YxfJrLrGgfXWeXM9sD3Wtwxmq3/j6B/btompBNs64wyy/xL+xxJ
+	Nfs5LzFmkaFmfKDdPPuVwkF7J/kmTxYN1Uit637DMscepYM=
+X-Google-Smtp-Source: AGHT+IFgXE0Kn7nwyxQpexxyqyOwXWRq+T7iboVW712paU7v2Kv3xAZ15AF4xkvBs03wAYi+7MR1iRnCT9vVBHabh7A=
+X-Received: by 2002:a25:d7d1:0:b0:d7b:3917:460b with SMTP id
+ o200-20020a25d7d1000000b00d7b3917460bmr10461842ybg.52.1694479213304; Mon, 11
+ Sep 2023 17:40:13 -0700 (PDT)
+MIME-Version: 1.0
+References: <CABNE7-t0_Qrr5tu4ZesdxoaDKpL4b71-krK=TtEp9RCyf1su8w@mail.gmail.com>
+ <CAHLxjZ6ix8SrUYBNH1r=dD-WjaFHmqpDjvWui=u5ZmwvOv+ucw@mail.gmail.com>
+ <CAMP3UXLRvQxk4U5pUA9AO5MWqUQo6MsF1SaF+nAtQY9Ob3=vuw@mail.gmail.com>
+ <CAHLxjZ41jb=w95Ls4JDKP3ba71=mzajwAHivasTcPQ56PUHW6g@mail.gmail.com>
+ <CAMP3UXL0Js0PkAmaN_iSsA9SFvTRCPdLAT=BQ-vf60-vBQC-QQ@mail.gmail.com>
+ <CAKE8W-D_r4CRq_qWaSRkygC6Xn9o_W14C3M1LeDckcKO0qkFMg@mail.gmail.com>
+ <CANGsWo6kUena9QfT-KDeEKopctVMOnyXVLvcgNCK+UhzQtvq4Q@mail.gmail.com>
+ <CAHLxjZ4an6w4_Xj+RhwvS6D1VAeF=dhkkzZme4DNbWo2-qiS2A@mail.gmail.com>
+ <CABNE7-s6f6xc+hk5Y_KuEUNTDS0+UqH4iXoigTPuBJZD+uighA@mail.gmail.com> <CAHLxjZ7Eg_HBu4aeSX=Tt8qz=G3iFd0FRzR9dWBm8YNw56unMw@mail.gmail.com>
+In-Reply-To: <CAHLxjZ7Eg_HBu4aeSX=Tt8qz=G3iFd0FRzR9dWBm8YNw56unMw@mail.gmail.com>
+From: Celina Hunziker <celihunziker@gmail.com>
+Date: Mon, 11 Sep 2023 21:40:01 -0300
+Message-ID: <CABNE7-upyZeABKPTFyXLefSFcH06yWZWa6L_dKKvUbvyTmrpow@mail.gmail.com>
+Subject: =?UTF-8?Q?Fwd=3A_Consulta=2FConversaci=C3=B3n_TP_6_ISW_4K1_G5?=
+To: sofi.almendra02@gmail.com, delfidionisio19@gmail.com, 
+	paularrascaeta@gmail.com, franm2910@gmail.com, somavillarami@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000969fdd06051eaf9a"
+
+--000000000000969fdd06051eaf9a
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+From: Micka Crespo <mickaelacrespo@gmail.com>
+Date: Mon, Sep 11, 2023, 20:51
+Subject: Re: Consulta/Conversaci=C3=B3n TP 6 ISW 4K1 G5
+To: Celina Hunziker <celihunziker@gmail.com>
+
+
+Hola Celina,
+
+1) La programaci=C3=B3n de la recepci=C3=B3n (Programarla o lo antes posibl=
+e) se
+deber=C3=ADa hacer antes de la visualizaci=C3=B3n del resumen ya que esa in=
+formaci=C3=B3n
+debe verse tambi=C3=A9n en el resumen. Aparte de ese cambio, est=C3=A1 bien=
+ el orden
+del resto de los =C3=ADtems. El bot=C3=B3n de confirmaci=C3=B3n deber=C3=AD=
+a verse en la
+pantalla del resumen del pedido.
+2) No existe un monto m=C3=A1ximo de pedido para realizar.
+3) No se aceptan pagos parciales, o todo en efectivo o todo en tarjeta.
+
+Espero haber respondido satisfactoriamente,
+
+On Mon, 11 Sept 2023 at 16:38, Celina Hunziker <celihunziker@gmail.com>
+wrote:
+
+> Micka,
+> =C2=BFC=C3=B3mo est=C3=A1s? Es correcto asumir que la forma de hacer un p=
+edido (seg=C3=BAn la
+> user story) sigue el siguiente orden:
+>
+>    1. Ingresar los Productos, el Monto y la Foto del Producto.
+>    2. Ingresar Direcci=C3=B3n de Entrega y de Comercio junto con una
+>    Referencia opcional
+>    3. Visualizar el resumen del pedido y forma de pago (monto de
+>    efectivo, y datos de tarjeta de cr=C3=A9dito/d=C3=A9bito dependiendo d=
+e lo elegido)
+>    4. Programar recepci=C3=B3n (lo antes posible o con fecha de entrega)
+>    5. Y finalmente una pesta=C3=B1a que confirme lo solicitado (detalles =
+del
+>    pedido)
+>
+> Adem=C3=A1s, tenemos algunas otras preguntas:
+>
+>    - =C2=BFExiste un monto m=C3=A1ximo por pedido que pueda ingresar el c=
+liente? Me
+>    refiero a que no se puedan hacer compras de m=C3=A1s de $30000000 por =
+ejemplo.
+>    - =C2=BFSe puede pagar una parte en efectivo y otra con tarjeta o sola=
+mente
+>    se permite una forma de pago por pedido?
+>
+> Espero su respuesta.
+>
+> Atentamente,
+> Celina Hunziker.
+>
+> On Mon, Sep 11, 2023 at 12:41=E2=80=AFPM Micka Crespo <mickaelacrespo@gma=
+il.com>
+> wrote:
+>
+>> Hols Ramiro,
+>>
+>> =C2=A1Muy buen d=C3=ADa! Procedo a responder sus preguntas:
+>>
+>> 1) Los pedidos se pueden programar hasta 7 d=C3=ADas desde el d=C3=ADa a=
+ctual. Si
+>> se est=C3=A1 haciendo un pedido un martes, se puede programar el pedido =
+hasta el
+>> lunes de la semana siguiente, inclusive. Ya no es posible para el martes=
+ de
+>> la semana siguiente. El rango horario es de 7 a 23:59. Una hora inv=C3=
+=A1lida es
+>> una hora ya pasada, una hora que est=C3=A9 fuera del horario de atenci=
+=C3=B3n o una
+>> hora pasados los 7 d=C3=ADas.
+>> 2) Efectivamente la aplicaci=C3=B3n trabaja normal los fines de semana y=
+ los
+>> feriados
+>>
+>> On Mon, 11 Sept 2023 at 11:02, Rami Somavilla <somavillarami@gmail.com>
+>> wrote:
+>>
+>>> Buenos d=C3=ADas!! como estan?
+>>>
+>>> Les consulto por un par de dudas:
+>>>
+>>>    - cuando se ingresa la fecha para programar la entrega, existe alg=
+=C3=BAn
+>>>    tipo de restricci=C3=B3n? Por ejemplo que no permita programar entre=
+gas para
+>>>    fechas posteriores a los 3 d=C3=ADas.
+>>>    - El negocio trabaja normal los fines de semana y los feriados?
+>>>
+>>>
+>>> Desde ya muchas gracias, saludos.
+>>>
+>>> El vie, 8 sept 2023 a la(s) 20:15, Gerardo Boiero Rovera (
+>>> gboiero@gmail.com) escribi=C3=B3:
+>>>
+>>>> Hola Sofia!
+>>>> Como est=C3=A1s?
+>>>>
+>>>> Se solicita luego de ingresar los productos, y es el importe total de
+>>>> esos productos pedidos.
+>>>> Espero haberte respondido las dudas.
+>>>> Saludos!!
+>>>>
+>>>>
+>>>> El vie, 8 sept 2023 a las 18:04, Sofia Almendra (<
+>>>> sofi.almendra02@gmail.com>) escribi=C3=B3:
+>>>>
+>>>>> Gracias Micka por responder!
+>>>>> En base a una de tus respuestas anteriores: 4) El cliente debe
+>>>>> ingresar cual es el costo de los productos en un campo de texto
+>>>>> especialmente para ello. Este campo debe ser num=C3=A9rico y respetar=
+ el formato
+>>>>> de moneda de Argentina.
+>>>>> Este costo se refiere al TOTAL de los productos que pide? Y debe
+>>>>> ingresarlo inmediatamente despu=C3=A9s de ingresar los productos en e=
+l campo de
+>>>>> texto? O es un dato que se pide en otro momento?
+>>>>>  Desde ya muchas gracias! Saludos.
+>>>>>
+>>>>> El jue, 7 sept 2023 a las 10:10, Micka Crespo (<
+>>>>> mickaelacrespo@gmail.com>) escribi=C3=B3:
+>>>>>
+>>>>>> Buen dia Sofi,
+>>>>>>
+>>>>>> Les respondo estas nuevas preguntas:
+>>>>>>
+>>>>>> 1) Si, efectivamente hay una paleta de colores a seguir. Esa paleta
+>>>>>> es la siguiente: https://coolors.co/9c89b8-f0a6ca-efc3e6-f0e6ef-b8be=
+dd
+>>>>>> mientras cumplan esa paleta de colores, pueden distribuirlos como us=
+tedes
+>>>>>> deseen entre botones, fondos, encabezados y otras acciones.
+>>>>>> 2) Por ahora desde DeliveryEat no hemos podido dise=C3=B1ar un logo =
+de la
+>>>>>> aplicaci=C3=B3n, as=C3=AD que es por eso que le pedimos al equipo de=
+ desarrollo
+>>>>>> (ustedes) que agreguen un logo cuyos colores cumplan la paleta de co=
+lores
+>>>>>> propuesta a modo de placeholder para el logo real. De esta forma sab=
+emos
+>>>>>> donde ir=C3=A1 el logo real una vez est=C3=A9 finalizado.
+>>>>>> 3) No hemos seleccionado una tipograf=C3=ADa en particular, pueden
+>>>>>> utilizar la que ustedes deseen.
+>>>>>> 4) El cliente debe ingresar cual es el costo de los productos en un
+>>>>>> campo de texto especialmente para ello. Este campo debe ser num=C3=
+=A9rico y
+>>>>>> respetar el formato de moneda de Argentina.
+>>>>>> 5) El costo de env=C3=ADo es un monto de $500 fijos. No importa la
+>>>>>> distancia del env=C3=ADo.
+>>>>>> 6) Cuando el cliente confirma el pedido se debe mostrar un mensaje
+>>>>>> agradeci=C3=A9ndole por su compra, y mostrando un resumen del detall=
+e del pedido
+>>>>>> (Mostrando un detalle de direcci=C3=B3n de retiro, envio, costo y me=
+dio de pago)
+>>>>>>
+>>>>>> Espero haber contestado de forma satisfactoria sus preguntas. Siempr=
+e
+>>>>>> que tengan mas preguntas, pueden enviarlas y las voy a estar respond=
+iendo.
+>>>>>>
+>>>>>> On Thu, 7 Sept 2023 at 09:50, Sofia Almendra <
+>>>>>> sofi.almendra02@gmail.com> wrote:
+>>>>>>
+>>>>>>> Buen d=C3=ADa Micka! Nos surgieron otras dudas acerca del TP6:
+>>>>>>> 1) Cu=C3=A1les son los colores de la aplicaci=C3=B3n, refiri=C3=A9n=
+donos a colores
+>>>>>>> de fondo, color de botones, alg=C3=BAn color espec=C3=ADfico para l=
+as acciones de
+>>>>>>> pedir, pagar, cancelar?
+>>>>>>> 2) La aplicaci=C3=B3n tiene un logo? En caso de tenerlo, d=C3=B3nde=
+ se
+>>>>>>> ubicar=C3=ADa, y se mostrar=C3=ADa en todas las pantallas? En caso =
+de no tenerlo,
+>>>>>>> podemos escoger uno?
+>>>>>>> 3) Tipolog=C3=ADa de la letra. =C2=BFAlguna fuente en particular?
+>>>>>>> En base a este criterio:  Se debe poder visualizar el total a
+>>>>>>> pagar, en funci=C3=B3n de la distancia y/o del costo del producto, =
+antes de
+>>>>>>> elegir la forma de pago.
+>>>>>>> 4) Tema: precio de productos. =C2=BFC=C3=B3mo se hace para calcular=
+lo?
+>>>>>>> (sabiendo que el cliente puede ingresar m=C3=A1s de un producto par=
+a comprar y
+>>>>>>> que no sabemos los precios de los productos)
+>>>>>>> 5) Tema: costo de env=C3=ADo. =C2=BFC=C3=B3mo se calcula? =C2=BFDep=
+ende de la ciudad y
+>>>>>>> de la distancia?
+>>>>>>> 6) Cuando el cliente confirma el pedido al final de la US, se debe
+>>>>>>> mostrar alg=C3=BAn mensaje de confirmaci=C3=B3n?
+>>>>>>> Gracias, saludos!
+>>>>>>>
+>>>>>>> El mar, 5 sept 2023 a las 20:47, Micka Crespo (<
+>>>>>>> mickaelacrespo@gmail.com>) escribi=C3=B3:
+>>>>>>>
+>>>>>>>> Buenas noches Celina,
+>>>>>>>>
+>>>>>>>> Procedo a responder tus preguntas:
+>>>>>>>>
+>>>>>>>> 1) El l=C3=ADmite es de 240 caracteres. Debe aceptar letras, n=C3=
+=BAmeros y
+>>>>>>>> caracteres especiales. El usuario que pide puede pedir lo que quie=
+ra, no
+>>>>>>>> importa si es una cosa o muchas. La =C3=BAnica condici=C3=B3n es q=
+ue entre en el
+>>>>>>>> campo de texto. Mientras los busque en una sola direcci=C3=B3n y l=
+os entregue en
+>>>>>>>> una sola direcci=C3=B3n, no importa cuantas cosas pida.
+>>>>>>>> 2) Solo se puede subir una sola foto.
+>>>>>>>> 3) La calle y n=C3=BAmero son en un solo campo. La ciudad debe pod=
+er
+>>>>>>>> seleccionarse entre las opciones Cordoba y Carlos Paz utilizando u=
+n
+>>>>>>>> Autocomplete. A medida que se vaya escribiendo se deben mostrar la=
+s
+>>>>>>>> opciones en orden alfab=C3=A9tico. En la US dice que deber=C3=ADan=
+ tener un mapa
+>>>>>>>> interactivo conectado con Google maps, a fines de hacer el TP meno=
+s
+>>>>>>>> complejo, aceptaremos que el mapa este mockeado mostrando una imag=
+en del
+>>>>>>>> mapa de c=C3=B3rdoba.
+>>>>>>>> 4) Se puede volver atr=C3=A1s siempre que no se haya confirmado el
+>>>>>>>> pedido. Se puede modificar toda la informaci=C3=B3n ingresada.
+>>>>>>>>
+>>>>>>>> Espero haber contestado satisfactoriamente
+>>>>>>>>
+>>>>>>>>
+>>>>>>>> On Tue, 5 Sept 2023 at 20:24, Celina Hunziker <
+>>>>>>>> celihunziker@gmail.com> wrote:
+>>>>>>>>
+>>>>>>>>> Buenas Noches,
+>>>>>>>>> Les escribo por consultas del TP 6 de Ingenier=C3=ADa y Calidad d=
+e
+>>>>>>>>> Software que surgieron en mi grupo.
+>>>>>>>>>
+>>>>>>>>>    1.
+>>>>>>>>>
+>>>>>>>>>    Sobre campo de texto donde se especifica lo que se debe buscar=
+:
+>>>>>>>>>    1.
+>>>>>>>>>
+>>>>>>>>>       =C2=BFTiene un l=C3=ADmite de caracteres?
+>>>>>>>>>       2.
+>>>>>>>>>
+>>>>>>>>>       =C2=BFEs de tipo alfanum=C3=A9rico?
+>>>>>>>>>       3.
+>>>>>>>>>
+>>>>>>>>>       =C2=BFSe puede pedir m=C3=A1s de un producto?
+>>>>>>>>>       1.
+>>>>>>>>>
+>>>>>>>>>          =C2=BFSi se puede pedir m=C3=A1s de un producto, los mis=
+mos pueden
+>>>>>>>>>          ser de distintos negocios?
+>>>>>>>>>          2.
+>>>>>>>>>
+>>>>>>>>>    Sobre la foto que puede ser adjuntada:
+>>>>>>>>>    1.
+>>>>>>>>>
+>>>>>>>>>       =C2=BFSe puede subir m=C3=A1s de una foto?
+>>>>>>>>>       3.
+>>>>>>>>>
+>>>>>>>>>    Sobre la direcci=C3=B3n del negocio:
+>>>>>>>>>    1.
+>>>>>>>>>
+>>>>>>>>>       =C2=BFEscribimos la direcci=C3=B3n completa en un mismo cam=
+po de
+>>>>>>>>>       texto? O dividimos en calle, n=C3=BAmero, ciudad=E2=80=A6
+>>>>>>>>>       2.
+>>>>>>>>>
+>>>>>>>>>       Con respecto a la ciudad, el cuarto criterio de aceptaci=C3=
+=B3n
+>>>>>>>>>       dice que la misma se puede escribir en un campo de texto, m=
+ientras que el
+>>>>>>>>>       quinto especifica que se debe visualizar en un dropbox. =C2=
+=BFCu=C3=A1l de los dos
+>>>>>>>>>       criterios deber=C3=ADamos seguir?
+>>>>>>>>>       3.
+>>>>>>>>>
+>>>>>>>>>       =C2=BFSe puede elegir la direcci=C3=B3n seleccionando en un=
+ mapa
+>>>>>>>>>       interactivo?
+>>>>>>>>>       4.
+>>>>>>>>>
+>>>>>>>>>    Si ya ingresamos la direcci=C3=B3n y tarjeta
+>>>>>>>>>    1.
+>>>>>>>>>
+>>>>>>>>>       =C2=BFEs posible volver atr=C3=A1s?
+>>>>>>>>>       2.
+>>>>>>>>>
+>>>>>>>>>       =C2=BFSe puede modificar el pedido?
+>>>>>>>>>
+>>>>>>>>> Desde ya, muchas gracias. Espero su respuesta.
+>>>>>>>>>
+>>>>>>>>> Atentamente,
+>>>>>>>>> Celina Hunziker
+>>>>>>>>>
+>>>>>>>>
+>>>>>>>>
+>>>>>>>> --
+>>>>>>>> Saludos,
+>>>>>>>> Micka Crespo
+>>>>>>>>
+>>>>>>>
+>>>>>>
+>>>>>> --
+>>>>>> Saludos,
+>>>>>> Micka Crespo
+>>>>>>
+>>>>>
+>>>>
+>>>> --
+>>>> *Ing. Gerardo Boiero Rovera*
+>>>>
+>>>> P Antes de imprimir, piensa en tu responsabilidad con el MEDIO
+>>>> AMBIENTE.
+>>>>
+>>>>
+>>
+>> --
+>> Saludos,
+>> Micka Crespo
+>>
+>
+
+--=20
+Saludos,
+Micka Crespo
+
+--000000000000969fdd06051eaf9a
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto"></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" cla=
+ss=3D"gmail_attr">---------- Forwarded message ---------<br>From: <strong c=
+lass=3D"gmail_sendername" dir=3D"auto">Micka Crespo</strong> <span dir=3D"a=
+uto">&lt;<a href=3D"mailto:mickaelacrespo@gmail.com">mickaelacrespo@gmail.c=
+om</a>&gt;</span><br>Date: Mon, Sep 11, 2023, 20:51<br>Subject: Re: Consult=
+a/Conversaci=C3=B3n TP 6 ISW 4K1 G5<br>To: Celina Hunziker &lt;<a href=3D"m=
+ailto:celihunziker@gmail.com">celihunziker@gmail.com</a>&gt;<br></div><br><=
+br><div dir=3D"ltr">Hola Celina,<div><br></div><div>1) La programaci=C3=B3n=
+ de la recepci=C3=B3n (Programarla o lo antes posible) se deber=C3=ADa hace=
+r antes de la visualizaci=C3=B3n del resumen ya que esa informaci=C3=B3n de=
+be verse tambi=C3=A9n en el resumen. Aparte de ese cambio, est=C3=A1 bien e=
+l orden del resto de los =C3=ADtems. El bot=C3=B3n de confirmaci=C3=B3n deb=
+er=C3=ADa verse en la pantalla del resumen del pedido.=C2=A0</div><div>2) N=
+o existe un monto m=C3=A1ximo de pedido para realizar.</div><div>3) No se a=
+ceptan pagos parciales, o todo en efectivo o todo en tarjeta.</div><div><br=
+></div><div>Espero haber respondido satisfactoriamente,</div></div><br><div=
+ class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Mon, 11 Sep=
+t 2023 at 16:38, Celina Hunziker &lt;<a href=3D"mailto:celihunziker@gmail.c=
+om" target=3D"_blank" rel=3D"noreferrer">celihunziker@gmail.com</a>&gt; wro=
+te:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px =
+0.8ex;border-left-width:1px;border-left-style:solid;border-left-color:rgb(2=
+04,204,204);padding-left:1ex"><div dir=3D"ltr">Micka,=C2=A0<div>=C2=BFC=C3=
+=B3mo est=C3=A1s? Es correcto asumir que la forma de hacer un pedido (seg=
+=C3=BAn la user story) sigue el siguiente orden:</div><div><ol><li>Ingresar=
+ los Productos, el Monto y la Foto del Producto.</li><li>Ingresar Direcci=
+=C3=B3n de Entrega y de Comercio junto con una Referencia opcional</li><li>=
+Visualizar el resumen del pedido y forma de pago (monto de efectivo, y dato=
+s de tarjeta de cr=C3=A9dito/d=C3=A9bito dependiendo de lo elegido)</li><li=
+>Programar recepci=C3=B3n (lo antes posible o con fecha de entrega)</li><li=
+>Y finalmente una pesta=C3=B1a que confirme lo solicitado (detalles del ped=
+ido)</li></ol>Adem=C3=A1s, tenemos algunas otras preguntas:</div><div><ul><=
+li>=C2=BFExiste un monto m=C3=A1ximo por pedido que pueda ingresar el clien=
+te? Me refiero a que no se puedan hacer compras de m=C3=A1s de $30000000 po=
+r ejemplo.</li><li>=C2=BFSe puede pagar una parte en efectivo y otra con ta=
+rjeta o solamente se permite una forma de pago por pedido?</li></ul>Espero =
+su respuesta.</div><div><br></div><div>Atentamente,</div><div>Celina Hunzik=
+er.</div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gma=
+il_attr">On Mon, Sep 11, 2023 at 12:41=E2=80=AFPM Micka Crespo &lt;<a href=
+=3D"mailto:mickaelacrespo@gmail.com" target=3D"_blank" rel=3D"noreferrer">m=
+ickaelacrespo@gmail.com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_=
+quote" style=3D"margin:0px 0px 0px 0.8ex;border-left-width:1px;border-left-=
+style:solid;border-left-color:rgb(204,204,204);padding-left:1ex"><div dir=
+=3D"ltr">Hols Ramiro,<div><br></div><div>=C2=A1Muy buen d=C3=ADa! Procedo a=
+ responder sus preguntas:</div><div><br></div><div>1) Los pedidos se pueden=
+ programar hasta 7 d=C3=ADas desde el d=C3=ADa actual. Si se est=C3=A1 haci=
+endo un pedido un martes, se puede programar el pedido hasta el lunes de la=
+ semana siguiente, inclusive. Ya no es posible para el martes de la semana =
+siguiente. El rango horario es de 7 a 23:59. Una hora inv=C3=A1lida es una =
+hora ya pasada, una hora que est=C3=A9 fuera del horario de atenci=C3=B3n o=
+ una hora pasados los 7 d=C3=ADas.<br></div><div>2) Efectivamente la aplica=
+ci=C3=B3n trabaja normal los fines de semana y los feriados</div></div><br>=
+<div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Mon, 11=
+ Sept 2023 at 11:02, Rami Somavilla &lt;<a href=3D"mailto:somavillarami@gma=
+il.com" target=3D"_blank" rel=3D"noreferrer">somavillarami@gmail.com</a>&gt=
+; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px=
+ 0px 0.8ex;border-left-width:1px;border-left-style:solid;border-left-color:=
+rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">Buenos d=C3=ADas!! como=
+ estan?<br><br>Les consulto por un par de dudas: <br><ul><li>cuando se ingr=
+esa la fecha para programar la entrega, existe alg=C3=BAn tipo de restricci=
+=C3=B3n? Por ejemplo que no permita programar entregas para fechas posterio=
+res a los 3 d=C3=ADas.</li><li>El negocio trabaja normal los fines=C2=A0de =
+semana y los feriados?<br><br></li></ul>Desde ya muchas gracias, saludos.</=
+div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">El=
+ vie, 8 sept 2023 a la(s) 20:15, Gerardo Boiero Rovera (<a href=3D"mailto:g=
+boiero@gmail.com" target=3D"_blank" rel=3D"noreferrer">gboiero@gmail.com</a=
+>) escribi=C3=B3:<br></div><blockquote class=3D"gmail_quote" style=3D"margi=
+n:0px 0px 0px 0.8ex;border-left-width:1px;border-left-style:solid;border-le=
+ft-color:rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">Hola Sofia!<di=
+v>Como est=C3=A1s?</div><div><br></div><div>Se solicita luego de ingresar l=
+os productos, y es el importe total de esos productos pedidos.</div><div>Es=
+pero haberte respondido las dudas.</div><div>Saludos!!</div><div><br></div>=
+</div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">=
+El vie, 8 sept 2023 a las 18:04, Sofia Almendra (&lt;<a href=3D"mailto:sofi=
+.almendra02@gmail.com" target=3D"_blank" rel=3D"noreferrer">sofi.almendra02=
+@gmail.com</a>&gt;) escribi=C3=B3:<br></div><blockquote class=3D"gmail_quot=
+e" style=3D"margin:0px 0px 0px 0.8ex;border-left-width:1px;border-left-styl=
+e:solid;border-left-color:rgb(204,204,204);padding-left:1ex"><div dir=3D"lt=
+r">Gracias Micka por responder!<div>En base a una de tus respuestas anterio=
+res:=C2=A0<a style=3D"color:rgb(0,0,0);font-family:&quot;Google Sans&quot;,=
+Roboto,sans-serif;font-size:12px" rel=3D"noreferrer">4) El cliente debe ing=
+resar cual es el costo de los productos en un campo de texto especialmente =
+para ello. Este campo debe ser num=C3=A9rico y respetar el formato de moned=
+a de Argentina. </a></div><div>Este costo se refiere al TOTAL de los produc=
+tos que pide? Y debe ingresarlo inmediatamente despu=C3=A9s de ingresar los=
+ productos en el campo de texto? O es un dato que se pide en otro momento?<=
+/div><div>=C2=A0Desde=C2=A0ya muchas gracias! Saludos.</div></div><br><div =
+class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">El jue, 7 sept =
+2023 a las 10:10, Micka Crespo (&lt;<a href=3D"mailto:mickaelacrespo@gmail.=
+com" target=3D"_blank" rel=3D"noreferrer">mickaelacrespo@gmail.com</a>&gt;)=
+ escribi=C3=B3:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:=
+0px 0px 0px 0.8ex;border-left-width:1px;border-left-style:solid;border-left=
+-color:rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">Buen dia Sofi,<d=
+iv><br></div><div>Les respondo estas nuevas preguntas:</div><div><br></div>=
+<div>1) Si, efectivamente hay una paleta de colores a seguir. Esa paleta es=
+ la siguiente:=C2=A0<a style=3D"color:rgb(0,0,0);font-family:&quot;Google S=
+ans&quot;,Roboto,sans-serif;font-size:12px;white-space:pre-wrap" rel=3D"nor=
+eferrer">https://coolors.co/9c89b8-f0a6ca-efc3e6-f0e6ef-b8bedd mientras cum=
+plan esa paleta de colores, pueden distribuirlos como ustedes deseen entre =
+botones, fondos, encabezados y otras acciones. </a></div><div><a style=3D"c=
+olor:rgb(0,0,0);font-family:&quot;Google Sans&quot;,Roboto,sans-serif;font-=
+size:12px;white-space:pre-wrap" rel=3D"noreferrer">2) Por ahora desde Deliv=
+eryEat no hemos podido dise=C3=B1ar un logo de la aplicaci=C3=B3n, as=C3=AD=
+ que es por eso que le pedimos al equipo de desarrollo (ustedes) que agregu=
+en un logo cuyos colores cumplan la paleta de colores propuesta a modo de p=
+laceholder para el logo real. De esta forma sabemos donde ir=C3=A1</a><a st=
+yle=3D"color:rgb(0,0,0);font-family:&quot;Google Sans&quot;,Roboto,sans-ser=
+if;font-size:12px;white-space:pre-wrap" rel=3D"noreferrer"> el logo real un=
+a vez est=C3=A9 finalizado.</a></div><div><a style=3D"color:rgb(0,0,0);font=
+-family:&quot;Google Sans&quot;,Roboto,sans-serif;font-size:12px;white-spac=
+e:pre-wrap" rel=3D"noreferrer">3) No hemos seleccionado una tipograf=C3=ADa=
+ en particular, pueden utilizar la que ustedes deseen.</a></div><div><a sty=
+le=3D"color:rgb(0,0,0);font-family:&quot;Google Sans&quot;,Roboto,sans-seri=
+f;font-size:12px;white-space:pre-wrap" rel=3D"noreferrer">4) El cliente deb=
+e ingresar cual es el costo de los productos en un campo de texto especialm=
+ente para ello. Este campo debe ser num=C3=A9rico y respetar el formato de =
+moneda de Argentina. </a></div><div><a style=3D"color:rgb(0,0,0);font-famil=
+y:&quot;Google Sans&quot;,Roboto,sans-serif;font-size:12px;white-space:pre-=
+wrap" rel=3D"noreferrer">5) El costo de env=C3=ADo es un monto de $500 fijo=
+s. No importa la distancia del env=C3=ADo. </a></div><div><a style=3D"color=
+:rgb(0,0,0);font-family:&quot;Google Sans&quot;,Roboto,sans-serif;font-size=
+:12px;white-space:pre-wrap" rel=3D"noreferrer">6) Cuando el cliente confirm=
+a el pedido se debe mostrar un mensaje agradeci=C3=A9ndole por su compra, y=
+ mostrando un resumen del detalle del pedido (Mostrando un detalle de direc=
+ci=C3=B3n de retiro, envio, costo y medio de pago)</a></div><div><a style=
+=3D"color:rgb(0,0,0);font-family:&quot;Google Sans&quot;,Roboto,sans-serif;=
+font-size:12px;white-space:pre-wrap" rel=3D"noreferrer"><br></a></div><div>=
+<a style=3D"color:rgb(0,0,0);font-family:&quot;Google Sans&quot;,Roboto,san=
+s-serif;font-size:12px;white-space:pre-wrap" rel=3D"noreferrer">Espero habe=
+r contestado de forma satisfactoria sus preguntas. Siempre que tengan mas p=
+reguntas, pueden enviarlas y las voy a estar respondiendo.</a></div></div><=
+br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Thu,=
+ 7 Sept 2023 at 09:50, Sofia Almendra &lt;<a href=3D"mailto:sofi.almendra02=
+@gmail.com" target=3D"_blank" rel=3D"noreferrer">sofi.almendra02@gmail.com<=
+/a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0=
+px 0px 0px 0.8ex;border-left-width:1px;border-left-style:solid;border-left-=
+color:rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">Buen d=C3=ADa Mic=
+ka! Nos surgieron otras dudas acerca del TP6:<div>1) Cu=C3=A1les son los co=
+lores de la aplicaci=C3=B3n, refiri=C3=A9ndonos a colores de fondo, color d=
+e botones, alg=C3=BAn color espec=C3=ADfico para las acciones de pedir, pag=
+ar, cancelar?</div>2) La aplicaci=C3=B3n tiene un logo? En caso de tenerlo,=
+ d=C3=B3nde se ubicar=C3=ADa, y se mostrar=C3=ADa en todas las pantallas? E=
+n caso de no tenerlo, podemos escoger uno?<br>3) Tipolog=C3=ADa de la letra=
+. =C2=BFAlguna fuente=C2=A0en=C2=A0particular?<div>En base=C2=A0a este crit=
+erio:=C2=A0
+
+<span id=3D"m_8945485269999508223m_1348350695263380774m_-634608521521554329=
+7m_-7326540137670211969m_3719143103947429644m_4563742522573825524m_45467314=
+55376442491m_3844660298523283725m_-4552010956374905228m_-718842938753137775=
+3gmail-docs-internal-guid-b038e394-7fff-60d5-44ae-a7671ef57056"><span style=
+=3D"font-size:11pt;font-family:Arial,sans-serif;color:rgb(0,0,0);background=
+-color:transparent;font-variant-numeric:normal;font-variant-east-asian:norm=
+al;font-variant-alternates:normal;vertical-align:baseline">Se debe poder vi=
+sualizar el total a pagar, en funci=C3=B3n de la distancia y/o del costo de=
+l producto, antes de elegir la forma de pago.</span></span><br><div>4) Tema=
+: precio de productos. =C2=BFC=C3=B3mo se hace para calcularlo? (sabiendo q=
+ue el cliente puede ingresar m=C3=A1s de un producto para comprar y que no =
+sabemos los precios de los productos)</div><div>5) Tema: costo de env=C3=AD=
+o. =C2=BFC=C3=B3mo se calcula? =C2=BFDepende de la ciudad y de la distancia=
+?</div></div><div>6) Cuando el cliente confirma el pedido al final de la=C2=
+=A0US, se debe mostrar alg=C3=BAn mensaje de confirmaci=C3=B3n?</div><div>G=
+racias, saludos!</div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr"=
+ class=3D"gmail_attr">El mar, 5 sept 2023 a las 20:47, Micka Crespo (&lt;<a=
+ href=3D"mailto:mickaelacrespo@gmail.com" target=3D"_blank" rel=3D"noreferr=
+er">mickaelacrespo@gmail.com</a>&gt;) escribi=C3=B3:<br></div><blockquote c=
+lass=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left-width:1p=
+x;border-left-style:solid;border-left-color:rgb(204,204,204);padding-left:1=
+ex"><div dir=3D"ltr">Buenas noches Celina,<div><br></div><div>Procedo a res=
+ponder tus preguntas:</div><div><br></div><div>1) El l=C3=ADmite=C2=A0es de=
+ 240 caracteres. Debe aceptar letras, n=C3=BAmeros y caracteres especiales.=
+ El usuario que pide puede pedir lo que quiera, no importa si es una cosa o=
+ muchas. La =C3=BAnica condici=C3=B3n es que entre en el campo de texto. Mi=
+entras los busque en una sola direcci=C3=B3n y los entregue en una sola dir=
+ecci=C3=B3n, no importa cuantas cosas pida.</div><div>2) Solo se puede subi=
+r una sola foto.</div><div>3) La calle y n=C3=BAmero=C2=A0son en un solo ca=
+mpo. La ciudad debe poder seleccionarse entre las opciones Cordoba y Carlos=
+ Paz utilizando un Autocomplete. A medida que se vaya escribiendo se deben =
+mostrar las opciones en orden alfab=C3=A9tico. En la US dice que deber=C3=
+=ADan tener un mapa interactivo conectado con Google maps, a fines de hacer=
+ el TP menos complejo, aceptaremos que el mapa este mockeado=C2=A0mostrando=
+ una imagen del mapa de c=C3=B3rdoba.</div><div>4) Se puede volver atr=C3=
+=A1s siempre que no se haya confirmado el pedido. Se puede modificar toda l=
+a informaci=C3=B3n=C2=A0ingresada.</div><div><br></div><div>Espero haber co=
+ntestado satisfactoriamente</div><div><br></div></div><br><div class=3D"gma=
+il_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Tue, 5 Sept 2023 at 20:2=
+4, Celina Hunziker &lt;<a href=3D"mailto:celihunziker@gmail.com" target=3D"=
+_blank" rel=3D"noreferrer">celihunziker@gmail.com</a>&gt; wrote:<br></div><=
+blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-l=
+eft-width:1px;border-left-style:solid;border-left-color:rgb(204,204,204);pa=
+dding-left:1ex"><div dir=3D"ltr"><span id=3D"m_8945485269999508223m_1348350=
+695263380774m_-6346085215215543297m_-7326540137670211969m_37191431039474296=
+44m_4563742522573825524m_4546731455376442491m_3844660298523283725m_-4552010=
+956374905228m_-7188429387531377753m_7750066564825063338m_-15648811180098533=
+40gmail-docs-internal-guid-918407e6-7fff-71c0-cf4d-66e364ed2787"><div style=
+=3D"text-align:justify"><font color=3D"#000000" face=3D"Arial, sans-serif">=
+<span style=3D"font-size:14.6667px">Buenas Noches,</span></font></div><div =
+style=3D"text-align:justify"><font color=3D"#000000" face=3D"Arial, sans-se=
+rif"><span style=3D"font-size:14.6667px">Les escribo por consultas del TP 6=
+ de Ingenier=C3=ADa y Calidad de Software que surgieron en mi grupo.</span>=
+</font></div><ol style=3D"margin-top:0px;margin-bottom:0px"><li style=3D"li=
+st-style-type:decimal;font-size:11pt;font-family:Arial,sans-serif;color:rgb=
+(0,0,0);background-color:transparent;font-variant-numeric:normal;font-varia=
+nt-east-asian:normal;font-variant-alternates:normal;vertical-align:baseline=
+;white-space:pre-wrap"><p style=3D"line-height:1.38;text-align:justify;marg=
+in-top:0pt;margin-bottom:0pt" role=3D"presentation"><span style=3D"font-siz=
+e:11pt;background-color:transparent;font-variant-numeric:normal;font-varian=
+t-east-asian:normal;font-variant-alternates:normal;vertical-align:baseline"=
+>Sobre campo de texto donde se especifica lo que se debe buscar:</span></p>=
+</li><ol style=3D"margin-top:0px;margin-bottom:0px"><li style=3D"list-style=
+-type:lower-alpha;font-size:11pt;font-family:Arial,sans-serif;color:rgb(0,0=
+,0);background-color:transparent;font-variant-numeric:normal;font-variant-e=
+ast-asian:normal;font-variant-alternates:normal;vertical-align:baseline;whi=
+te-space:pre-wrap"><p style=3D"line-height:1.38;text-align:justify;margin-t=
+op:0pt;margin-bottom:0pt" role=3D"presentation"><span style=3D"font-size:11=
+pt;background-color:transparent;font-variant-numeric:normal;font-variant-ea=
+st-asian:normal;font-variant-alternates:normal;vertical-align:baseline">=C2=
+=BFTiene un l=C3=ADmite de caracteres?=C2=A0</span></p></li><li style=3D"li=
+st-style-type:lower-alpha;font-size:11pt;font-family:Arial,sans-serif;color=
+:rgb(0,0,0);background-color:transparent;font-variant-numeric:normal;font-v=
+ariant-east-asian:normal;font-variant-alternates:normal;vertical-align:base=
+line;white-space:pre-wrap"><p style=3D"line-height:1.38;text-align:justify;=
+margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><span style=3D"font=
+-size:11pt;background-color:transparent;font-variant-numeric:normal;font-va=
+riant-east-asian:normal;font-variant-alternates:normal;vertical-align:basel=
+ine">=C2=BFEs de tipo alfanum=C3=A9rico?=C2=A0</span></p></li><li style=3D"=
+list-style-type:lower-alpha;font-size:11pt;font-family:Arial,sans-serif;col=
+or:rgb(0,0,0);background-color:transparent;font-variant-numeric:normal;font=
+-variant-east-asian:normal;font-variant-alternates:normal;vertical-align:ba=
+seline;white-space:pre-wrap"><p style=3D"line-height:1.38;text-align:justif=
+y;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><span style=3D"fo=
+nt-size:11pt;background-color:transparent;font-variant-numeric:normal;font-=
+variant-east-asian:normal;font-variant-alternates:normal;vertical-align:bas=
+eline">=C2=BFSe puede pedir m=C3=A1s de un producto?</span></p></li><ol sty=
+le=3D"margin-top:0px;margin-bottom:0px"><li style=3D"list-style-type:lower-=
+roman;font-size:11pt;font-family:Arial,sans-serif;color:rgb(0,0,0);backgrou=
+nd-color:transparent;font-variant-numeric:normal;font-variant-east-asian:no=
+rmal;font-variant-alternates:normal;vertical-align:baseline;white-space:pre=
+-wrap"><p style=3D"line-height:1.38;text-align:justify;margin-top:0pt;margi=
+n-bottom:0pt" role=3D"presentation"><span style=3D"font-size:11pt;backgroun=
+d-color:transparent;font-variant-numeric:normal;font-variant-east-asian:nor=
+mal;font-variant-alternates:normal;vertical-align:baseline">=C2=BFSi se pue=
+de pedir m=C3=A1s de un producto, los mismos pueden ser de distintos negoci=
+os?</span></p></li></ol></ol><li style=3D"list-style-type:decimal;font-size=
+:11pt;font-family:Arial,sans-serif;color:rgb(0,0,0);background-color:transp=
+arent;font-variant-numeric:normal;font-variant-east-asian:normal;font-varia=
+nt-alternates:normal;vertical-align:baseline;white-space:pre-wrap"><p style=
+=3D"line-height:1.38;text-align:justify;margin-top:0pt;margin-bottom:0pt" r=
+ole=3D"presentation"><span style=3D"font-size:11pt;background-color:transpa=
+rent;font-variant-numeric:normal;font-variant-east-asian:normal;font-varian=
+t-alternates:normal;vertical-align:baseline">Sobre la foto que puede ser ad=
+juntada:</span></p></li><ol style=3D"margin-top:0px;margin-bottom:0px"><li =
+style=3D"list-style-type:lower-alpha;font-size:11pt;font-family:Arial,sans-=
+serif;color:rgb(0,0,0);background-color:transparent;font-variant-numeric:no=
+rmal;font-variant-east-asian:normal;font-variant-alternates:normal;vertical=
+-align:baseline;white-space:pre-wrap"><p style=3D"line-height:1.38;text-ali=
+gn:justify;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><span st=
+yle=3D"font-size:11pt;background-color:transparent;font-variant-numeric:nor=
+mal;font-variant-east-asian:normal;font-variant-alternates:normal;vertical-=
+align:baseline">=C2=BFSe puede subir m=C3=A1s de una foto?</span></p></li><=
+/ol><li style=3D"list-style-type:decimal;font-size:11pt;font-family:Arial,s=
+ans-serif;color:rgb(0,0,0);background-color:transparent;font-variant-numeri=
+c:normal;font-variant-east-asian:normal;font-variant-alternates:normal;vert=
+ical-align:baseline;white-space:pre-wrap"><p style=3D"line-height:1.38;text=
+-align:justify;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><spa=
+n style=3D"font-size:11pt;background-color:transparent;font-variant-numeric=
+:normal;font-variant-east-asian:normal;font-variant-alternates:normal;verti=
+cal-align:baseline">Sobre la direcci=C3=B3n del negocio:</span></p></li><ol=
+ style=3D"margin-top:0px;margin-bottom:0px"><li style=3D"list-style-type:lo=
+wer-alpha;font-size:11pt;font-family:Arial,sans-serif;color:rgb(0,0,0);back=
+ground-color:transparent;font-variant-numeric:normal;font-variant-east-asia=
+n:normal;font-variant-alternates:normal;vertical-align:baseline;white-space=
+:pre-wrap"><p style=3D"line-height:1.38;text-align:justify;margin-top:0pt;m=
+argin-bottom:0pt" role=3D"presentation"><span style=3D"font-size:11pt;backg=
+round-color:transparent;font-variant-numeric:normal;font-variant-east-asian=
+:normal;font-variant-alternates:normal;vertical-align:baseline">=C2=BFEscri=
+bimos la direcci=C3=B3n completa en un mismo campo de texto? O dividimos en=
+ calle, n=C3=BAmero, ciudad=E2=80=A6</span></p></li><li style=3D"list-style=
+-type:lower-alpha;font-size:11pt;font-family:Arial,sans-serif;color:rgb(0,0=
+,0);background-color:transparent;font-variant-numeric:normal;font-variant-e=
+ast-asian:normal;font-variant-alternates:normal;vertical-align:baseline;whi=
+te-space:pre-wrap"><p style=3D"line-height:1.38;text-align:justify;margin-t=
+op:0pt;margin-bottom:0pt" role=3D"presentation"><span style=3D"font-size:11=
+pt;background-color:transparent;font-variant-numeric:normal;font-variant-ea=
+st-asian:normal;font-variant-alternates:normal;vertical-align:baseline">Con=
+ respecto a la ciudad, el cuarto criterio de aceptaci=C3=B3n dice que la mi=
+sma se puede escribir en un campo de texto, mientras que el quinto especifi=
+ca que se debe visualizar en un dropbox. =C2=BFCu=C3=A1l de los dos criteri=
+os deber=C3=ADamos seguir?</span></p></li><li style=3D"list-style-type:lowe=
+r-alpha;font-size:11pt;font-family:Arial,sans-serif;color:rgb(0,0,0);backgr=
+ound-color:transparent;font-variant-numeric:normal;font-variant-east-asian:=
+normal;font-variant-alternates:normal;vertical-align:baseline;white-space:p=
+re-wrap"><p style=3D"line-height:1.38;text-align:justify;margin-top:0pt;mar=
+gin-bottom:0pt" role=3D"presentation"><span style=3D"font-size:11pt;backgro=
+und-color:transparent;font-variant-numeric:normal;font-variant-east-asian:n=
+ormal;font-variant-alternates:normal;vertical-align:baseline">=C2=BFSe pued=
+e elegir la direcci=C3=B3n seleccionando en un mapa interactivo?</span></p>=
+</li></ol><li style=3D"list-style-type:decimal;font-size:11pt;font-family:A=
+rial,sans-serif;color:rgb(0,0,0);background-color:transparent;font-variant-=
+numeric:normal;font-variant-east-asian:normal;font-variant-alternates:norma=
+l;vertical-align:baseline;white-space:pre-wrap"><p style=3D"line-height:1.3=
+8;text-align:justify;margin-top:0pt;margin-bottom:0pt" role=3D"presentation=
+"><span style=3D"font-size:11pt;background-color:transparent;font-variant-n=
+umeric:normal;font-variant-east-asian:normal;font-variant-alternates:normal=
+;vertical-align:baseline">Si ya ingresamos la direcci=C3=B3n y tarjeta</spa=
+n></p></li><ol style=3D"margin-top:0px;margin-bottom:0px"><li style=3D"list=
+-style-type:lower-alpha;font-size:11pt;font-family:Arial,sans-serif;color:r=
+gb(0,0,0);background-color:transparent;font-variant-numeric:normal;font-var=
+iant-east-asian:normal;font-variant-alternates:normal;vertical-align:baseli=
+ne;white-space:pre-wrap"><p style=3D"line-height:1.38;text-align:justify;ma=
+rgin-top:0pt;margin-bottom:0pt" role=3D"presentation"><span style=3D"font-s=
+ize:11pt;background-color:transparent;font-variant-numeric:normal;font-vari=
+ant-east-asian:normal;font-variant-alternates:normal;vertical-align:baselin=
+e">=C2=BFEs posible volver atr=C3=A1s?=C2=A0</span></p></li><li style=3D"li=
+st-style-type:lower-alpha;font-size:11pt;font-family:Arial,sans-serif;color=
+:rgb(0,0,0);background-color:transparent;font-variant-numeric:normal;font-v=
+ariant-east-asian:normal;font-variant-alternates:normal;vertical-align:base=
+line;white-space:pre-wrap"><p style=3D"line-height:1.38;text-align:justify;=
+margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><span style=3D"font=
+-size:11pt;background-color:transparent;font-variant-numeric:normal;font-va=
+riant-east-asian:normal;font-variant-alternates:normal;vertical-align:basel=
+ine">=C2=BFSe puede modificar el pedido?</span></p></li></ol></ol><font col=
+or=3D"#000000" face=3D"Arial, sans-serif"><span style=3D"font-size:14.6667p=
+x">Desde ya, muchas gracias. Espero su respuesta.</span></font></span><div>=
+<span><font color=3D"#000000" face=3D"Arial, sans-serif"><span style=3D"fon=
+t-size:14.6667px"><br></span></font></span></div><div><span><font color=3D"=
+#000000" face=3D"Arial, sans-serif"><span style=3D"font-size:14.6667px">Ate=
+ntamente,</span></font></span></div><div><span><font color=3D"#000000" face=
+=3D"Arial, sans-serif"><span style=3D"font-size:14.6667px">Celina Hunziker<=
+/span></font></span></div></div>
+</blockquote></div><br clear=3D"all"><div><br></div><span class=3D"gmail_si=
+gnature_prefix">-- </span><br><div dir=3D"ltr" class=3D"gmail_signature"><d=
+iv dir=3D"ltr">Saludos,<div>Micka Crespo</div></div></div>
+</blockquote></div>
+</blockquote></div><br clear=3D"all"><div><br></div><span class=3D"gmail_si=
+gnature_prefix">-- </span><br><div dir=3D"ltr" class=3D"gmail_signature"><d=
+iv dir=3D"ltr">Saludos,<div>Micka Crespo</div></div></div>
+</blockquote></div>
+</blockquote></div><br clear=3D"all"><div><br></div><span class=3D"gmail_si=
+gnature_prefix">-- </span><br><div dir=3D"ltr" class=3D"gmail_signature"><d=
+iv><b>Ing. Gerardo Boiero Rovera</b></div><div><br></div><div><font face=3D=
+"Webdings" color=3D"green" size=3D"4"><span lang=3D"EN-GB" style=3D"font-si=
+ze:13.5pt;color:green;font-family:Webdings">P</span></font><font face=3D"Co=
+mic Sans MS" color=3D"#1f497d" size=3D"1"><span lang=3D"EN-GB" style=3D"fon=
+t-size:8pt;color:rgb(31,73,125);font-family:&quot;Comic Sans MS&quot;">=20
+</span></font><font face=3D"Tahoma" color=3D"green" size=3D"1"><span lang=
+=3D"ES" style=3D"font-size:7.5pt;color:green;font-family:Tahoma">Antes de i=
+mprimir,=20
+piensa en tu responsabilidad con el MEDIO AMBIENTE.</span></font></div><div=
+><font face=3D"Tahoma" color=3D"green" size=3D"1"><span lang=3D"ES" style=
+=3D"font-size:7.5pt;color:green;font-family:Tahoma"><br></span></font></div=
+></div>
+</blockquote></div>
+</blockquote></div><br clear=3D"all"><div><br></div><span class=3D"gmail_si=
+gnature_prefix">-- </span><br><div dir=3D"ltr" class=3D"gmail_signature"><d=
+iv dir=3D"ltr">Saludos,<div>Micka Crespo</div></div></div>
+</blockquote></div>
+</blockquote></div><br clear=3D"all"><div><br></div><span class=3D"gmail_si=
+gnature_prefix">-- </span><br><div dir=3D"ltr" class=3D"gmail_signature"><d=
+iv dir=3D"ltr">Saludos,<div>Micka Crespo</div></div></div>
+</div>
+
+--000000000000969fdd06051eaf9a--
