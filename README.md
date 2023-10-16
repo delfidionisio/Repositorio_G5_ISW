@@ -15,9 +15,9 @@ El presente documento tiene como objetivo establecer los lineamientos a seguir p
 ├── Práctico <br>
 │   ├── TPX <br>
 │   ├── Guías Prácticas <br>
-│   ├── Parcial X <br>
-│   │   ├── Ejercitaciones <br>
-│   │   ├── Resumenes <br>
+├── Parcial X <br>
+│   ├── Ejercitaciones <br>
+│   ├── Resumenes <br>
 ├── Información de la Cátedra <br>
 
 ## Listado Items de Configuración
