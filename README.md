@@ -27,7 +27,7 @@ El presente documento tiene como objetivo establecer los lineamientos a seguir p
 | Documento Resolución de TP            | Resolucion_\<TPXX\>_\<Iniciales\>.pdf        | Repositorio_G5_ISW\Práctico\TPXX\Resolucion_\<TPXX\>_\<Iniciales\> |
 | Enunciado Trabajo Práctico             | Enunciado_\<TPXX\>.pdf                       | Repositorio_G5_ISW\Práctico\<TPXX>\Enunciado_\<TPXX\>       |
 | Filminas Teóricas                      | \<NroFilmina\>_\<TemaFilmina\>.pdf           | Repositorio_G5_ISW\Teorico\Filminas\<NroFilmina\>_\<TemaFilmina\> |
-| Resúmenes                              | \<Iniciales\>_Resúmen                        | Repositorio_G5_ISW\Parciales\<ParcialXX>\Resúmenes\<Iniciales\>Resúmen |
+| Resúmenes                              | \<Iniciales\>_Resúmen_ISW_Unid_\<NroUnidades>\| Repositorio_G5_ISW\Parciales\<ParcialXX>\Resúmenes\<Iniciales\>Resúmen |
 | Ejercitación                           | \<Iniciales\>_Ejercitación.pdf               | Repositorio_G5_ISW\Parciales\<ParcialXX>\Ejercitaciones\<Iniciales\>_Ejercitación |
 | Toma de notas                          | \<Iniciales\>_TomaDeNotas.pdf               | Repositorio_G5_ISW\Parciales\<ParcialXX>\Resúmenes\<Iniciales\>_TomaDeNotas |
 | Respuestas Teóricas                   | \<Iniciales\>_RespuestasTeoricas.pdf        | Repositorio_G5_ISW\Parciales\<ParcialXX>\Ejercitaciones\<Iniciales\>_RespuestasTeoricas |
