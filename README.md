@@ -9,12 +9,12 @@ El presente documento tiene como objetivo establecer los lineamientos a seguir p
 │   │   ├── Cátedra <br>
 │   │   ├── Extra <br>
 │   ├── Guías Teóricos <br>
-├── Práctico <br>
-│   ├── TPX <br>
-│   ├── Guías Prácticas <br>
 │   ├── Trabajos Prácticos de Investigación <br>
 │   │   ├── Poster Científico - Testing Ágil <br>
 │   │   ├── Charla TED - Prácticas Continuas Parciales <br>
+├── Práctico <br>
+│   ├── TPX <br>
+│   ├── Guías Prácticas <br>
 │   ├── Parcial X <br>
 │   │   ├── Ejercitaciones <br>
 │   │   ├── Resumenes <br>
