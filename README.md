@@ -1,9 +1,6 @@
 # Documento de Gestión de Configuración
 Repositorio  - Grupo 5 - Ingeniería y Calidad de Software 
 
-## Tabla de Contenidos
-- [Estructura del Repositorio] (# Estructura del Repositorio)
-
 El presente documento tiene como objetivo establecer los lineamientos a seguir para la gestión de la configuración del proyecto, a lo largo del desarrollo de la materia Ingeniería y calidad de software.
 ## Estructura del Repositorio
 ├── Teórico <br>
